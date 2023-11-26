@@ -11,9 +11,10 @@ const Card=(props)=>{
     console.log(planet)
     return(
         <div className="cont-card">
-           <h1>{name}</h1>
-           <p>{nacimiento}</p>
-           {/* <p>{planet}</p> */}
+            <input name='ver' />
+           {/* <h1>{name}</h1>
+           <p>{nacimiento}</p> */}
+           <p>{ver.value}</p>
         </div>
     )
 }
