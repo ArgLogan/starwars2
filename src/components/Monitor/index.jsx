@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './monitor.css'
 
-const Monitor = () => {
-  const [url, setUrl] = useState('');
-  const [waitTime, setWaitTime] = useState(180000);
+const Monitor = (props) => {
+  const [url, setUrl] = useState(props.url);
+  const [waitTime, setWaitTime] = useState(600000);
   const [retryCount, setRetryCount] = useState(5);
   const [log, setLog] = useState('');
 
@@ -42,7 +42,9 @@ const Monitor = () => {
     // Iniciar la solicitud al hacer clic en un botón, por ejemplo
     makeRequest();
   };
-
+    useEffect(()=>{
+      makeRequest()
+    },[])
   return (
     <div className='container2'>
       <label>
